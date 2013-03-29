@@ -9,11 +9,11 @@
 
 #define SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
 #define APP_FRAME_HEIGHT (SCREEN_HEIGHT-20)
+#define KEYPAD_HEIGHT 216
 #define USER_GENDER_KEY @"gender"
 #define MALE @"male"
 #define FEMALE @"female"
 #define STORYBOARD_IPHONE @"MainStoryboard"
-
 #pragma mark - NSNotification
 extern NSString *const ATAppDelegateApplicationDidReceiveRemoteNotification;
 

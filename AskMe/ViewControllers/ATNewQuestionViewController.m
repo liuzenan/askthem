@@ -7,7 +7,10 @@
 //
 
 #import "ATNewQuestionViewController.h"
+#import "ATQuestionViewController.h"
+
 #import "ATQuestionController.h"
+#import <QuartzCore/QuartzCore.h>
 #import "UIColor-Expanded.h"
 
 @interface ATNewQuestionViewController ()
@@ -21,19 +24,11 @@
 
 @synthesize delegate;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)loadView{
     UIView *theView = [[UIView alloc]init];
     theView.frame = CGRectMake(0, 0, 320, APP_FRAME_HEIGHT);
-    theView.backgroundColor = [UIColor colorWithRGBHex:0xe8e8e8];
+    //theView.backgroundColor = [UIColor colorWithRGBHex:0xe8e8e8];
+    theView.backgroundColor = [UIColor colorWithRGBHex:0x999999];
     
     /*
     // Backing for textView
@@ -42,19 +37,38 @@
     [theView addSubview:textViewBack];
     */
     
+    UIView *textViewBacking = [UIView new];
+    textViewBacking.frame = CGRectMake(8, 8, 320-8-8, 44);
+    textViewBacking.layer.cornerRadius = 8.0;
+    textViewBacking.backgroundColor = [UIColor whiteColor];
+    [theView addSubview:textViewBacking];
+    
     titleTextField = [[UITextField alloc] init];
-    titleTextField.frame = CGRectMake(0, 0, 320, 44);
+    titleTextField.frame = CGRectMake(16, 16, 320-16-16, 44-8);
     titleTextField.delegate = self;
-    bodyTextView.font = [UIFont systemFontOfSize:14.0];
+    titleTextField.placeholder = @"Title";
+    titleTextField.font = [UIFont systemFontOfSize:16.0];
     [theView addSubview:titleTextField];
     
     
-    bodyTextView = [[UITextView alloc]initWithFrame:CGRectMake(14, 14+14, 320-14-14, APP_FRAME_HEIGHT-44-14-14-216)];
+    textViewBacking = [UIView new];
+    textViewBacking.frame = CGRectMake(8, 44+8+8, 320-8-8, APP_FRAME_HEIGHT-44-44-8-16-KEYPAD_HEIGHT);
+    textViewBacking.layer.cornerRadius = 5.0;
+    textViewBacking.backgroundColor = [UIColor whiteColor];
+    [theView addSubview:textViewBacking];
+    
+    bodyTextView = [[UITextView alloc]initWithFrame:CGRectMake(8, textViewBacking.frame.origin.y + 4, textViewBacking.frame.size.width-8-8, textViewBacking.frame.size.height-8-8)];
     bodyTextView.backgroundColor = [UIColor clearColor];
     bodyTextView.returnKeyType = UIReturnKeyDefault;
     bodyTextView.delegate = self;
-    bodyTextView.font = [UIFont systemFontOfSize:14.0];
+    bodyTextView.font = [UIFont systemFontOfSize:16.0];
     [theView addSubview:bodyTextView];
+    
+    UIButton *testButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    testButton.frame = CGRectMake(320-70, 44, 70, 40);
+    [testButton setTitle:@"Test" forState:UIControlStateNormal];
+    [testButton addTarget:self action:@selector(testTapped) forControlEvents:UIControlEventTouchUpInside];
+    [theView addSubview:testButton];
     
     self.view = theView;
     
@@ -199,7 +213,7 @@
         [testObject save];
         */
         
-        PFObject *question = [PFObject objectWithClassName:@"Question"];
+        PFObject *question = [PFObject objectWithClassName:kATQuestionClassKey];
         [question setObject:titleTextField.text forKey:kATQuestionTitleKey];
         [question setObject:bodyTextView.text forKey:kATQuestionBodyKey];
         
@@ -231,6 +245,14 @@
 
 - (void)_cancelOut{
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)testTapped{
+    
+    ATQuestionViewController *questionView = [[ATQuestionViewController alloc] init];
+    questionView.questionID = @"DVau2uoXym";
+    [self.navigationController pushViewController:questionView animated:YES];
+    
 }
 
 @end

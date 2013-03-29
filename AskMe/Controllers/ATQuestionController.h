@@ -21,4 +21,6 @@
 
 - (void)saveQuestion:(QuestionModel*)question;
 
+- (void)getPopularQuestions:(PFArrayResultBlock)block;
+
 @end

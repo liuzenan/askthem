@@ -7,16 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ATBaseViewController.h"
 
 @class QuestionModel;
 
 @protocol ATNewQuestionDelegate;
 
-@interface ATNewQuestionViewController : UIViewController <UITextViewDelegate, UITextFieldDelegate, UIAlertViewDelegate> {
+@interface ATNewQuestionViewController : ATBaseViewController <UITextViewDelegate, UITextFieldDelegate, UIAlertViewDelegate> {
     
     // UI
     
-    MBProgressHUD *HUD;
     UITextField *titleTextField;
     UITextView *bodyTextView;
     

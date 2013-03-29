@@ -12,8 +12,15 @@
 		614F990A17056AD100CA63CD /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 614F990917056AD100CA63CD /* MBProgressHUD.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		614F991017056B8B00CA63CD /* ATAnswerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 614F990D17056B8B00CA63CD /* ATAnswerController.m */; };
 		614F991117056B8B00CA63CD /* ATQuestionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 614F990F17056B8B00CA63CD /* ATQuestionController.m */; };
+
+		618F581517057696005527B3 /* ATQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 618F581417057696005527B3 /* ATQuestionViewController.m */; };
+		618F581817057A9A005527B3 /* icon_share@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 618F581717057A9A005527B3 /* icon_share@2x.png */; };
+		618F581B17057B0B005527B3 /* ATBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 618F581A17057B0B005527B3 /* ATBaseViewController.m */; };
+		618F581D17057B20005527B3 /* simple_left@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 618F581C17057B20005527B3 /* simple_left@2x.png */; };
+		618F5821170580D3005527B3 /* ATAnswerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 618F5820170580D3005527B3 /* ATAnswerCell.m */; };
 		E46C057617057160009C0554 /* ATSingleQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E46C057517057160009C0554 /* ATSingleQuestionViewController.m */; };
 		E46C0579170574DF009C0554 /* ATChooseGenderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E46C0578170574DF009C0554 /* ATChooseGenderViewController.m */; };
+
 		E4ACC94717053A230001F996 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4ACC94617053A230001F996 /* UIKit.framework */; };
 		E4ACC94917053A230001F996 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4ACC94817053A230001F996 /* Foundation.framework */; };
 		E4ACC94B17053A230001F996 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4ACC94A17053A230001F996 /* CoreGraphics.framework */; };
@@ -59,10 +66,21 @@
 		614F990D17056B8B00CA63CD /* ATAnswerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATAnswerController.m; sourceTree = "<group>"; };
 		614F990E17056B8B00CA63CD /* ATQuestionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATQuestionController.h; sourceTree = "<group>"; };
 		614F990F17056B8B00CA63CD /* ATQuestionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATQuestionController.m; sourceTree = "<group>"; };
+<<<<<<< HEAD
+		618F581317057696005527B3 /* ATQuestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ATQuestionViewController.h; path = ViewControllers/ATQuestionViewController.h; sourceTree = "<group>"; };
+		618F581417057696005527B3 /* ATQuestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ATQuestionViewController.m; path = ViewControllers/ATQuestionViewController.m; sourceTree = "<group>"; };
+		618F581717057A9A005527B3 /* icon_share@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_share@2x.png"; sourceTree = "<group>"; };
+		618F581917057B0B005527B3 /* ATBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ATBaseViewController.h; path = ViewControllers/ATBaseViewController.h; sourceTree = "<group>"; };
+		618F581A17057B0B005527B3 /* ATBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ATBaseViewController.m; path = ViewControllers/ATBaseViewController.m; sourceTree = "<group>"; };
+		618F581C17057B20005527B3 /* simple_left@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "simple_left@2x.png"; sourceTree = "<group>"; };
+		618F581F170580D3005527B3 /* ATAnswerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ATAnswerCell.h; path = Cells/ATAnswerCell.h; sourceTree = "<group>"; };
+		618F5820170580D3005527B3 /* ATAnswerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ATAnswerCell.m; path = Cells/ATAnswerCell.m; sourceTree = "<group>"; };
+=======
 		E46C057417057160009C0554 /* ATSingleQuestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATSingleQuestionViewController.h; sourceTree = "<group>"; };
 		E46C057517057160009C0554 /* ATSingleQuestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATSingleQuestionViewController.m; sourceTree = "<group>"; };
 		E46C0577170574DF009C0554 /* ATChooseGenderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATChooseGenderViewController.h; sourceTree = "<group>"; };
 		E46C0578170574DF009C0554 /* ATChooseGenderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATChooseGenderViewController.m; sourceTree = "<group>"; };
+>>>>>>> 1c72cc5b5c77e15909b8e81bab31fdec586f42e6
 		E4ACC94317053A230001F996 /* AskMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AskMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4ACC94617053A230001F996 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E4ACC94817053A230001F996 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -140,12 +158,19 @@
 			children = (
 				614F98FD1705665600CA63CD /* ATNewQuestionViewController.h */,
 				614F98FE1705665600CA63CD /* ATNewQuestionViewController.m */,
+<<<<<<< HEAD
+				618F581317057696005527B3 /* ATQuestionViewController.h */,
+				618F581417057696005527B3 /* ATQuestionViewController.m */,
+				618F581917057B0B005527B3 /* ATBaseViewController.h */,
+				618F581A17057B0B005527B3 /* ATBaseViewController.m */,
+=======
 				E4ACC99E170557510001F996 /* ATPopularViewController.h */,
 				E4ACC99F170557510001F996 /* ATPopularViewController.m */,
 				E46C057417057160009C0554 /* ATSingleQuestionViewController.h */,
 				E46C057517057160009C0554 /* ATSingleQuestionViewController.m */,
 				E46C0577170574DF009C0554 /* ATChooseGenderViewController.h */,
 				E46C0578170574DF009C0554 /* ATChooseGenderViewController.m */,
+>>>>>>> 1c72cc5b5c77e15909b8e81bab31fdec586f42e6
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -176,6 +201,24 @@
 				614F990F17056B8B00CA63CD /* ATQuestionController.m */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		618F581617057A9A005527B3 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				618F581C17057B20005527B3 /* simple_left@2x.png */,
+				618F581717057A9A005527B3 /* icon_share@2x.png */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		618F581E170580A6005527B3 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				618F581F170580D3005527B3 /* ATAnswerCell.h */,
+				618F5820170580D3005527B3 /* ATAnswerCell.m */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 		E4ACC93A17053A230001F996 = {
@@ -223,6 +266,8 @@
 		E4ACC94C17053A230001F996 /* AskMe */ = {
 			isa = PBXGroup;
 			children = (
+				618F581E170580A6005527B3 /* Cells */,
+				618F581617057A9A005527B3 /* Assets */,
 				614F99031705690E00CA63CD /* UIColor-Expanded.m */,
 				614F99041705690E00CA63CD /* UIColor-Expanded.h */,
 				614F990B17056B8B00CA63CD /* Controllers */,
@@ -341,6 +386,8 @@
 				E4ACC95B17053A240001F996 /* Default@2x.png in Resources */,
 				E4ACC95D17053A240001F996 /* Default-568h@2x.png in Resources */,
 				E4ACC96017053A240001F996 /* MainStoryboard.storyboard in Resources */,
+				618F581817057A9A005527B3 /* icon_share@2x.png in Resources */,
+				618F581D17057B20005527B3 /* simple_left@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,8 +411,14 @@
 				614F991017056B8B00CA63CD /* ATAnswerController.m in Sources */,
 				614F991117056B8B00CA63CD /* ATQuestionController.m in Sources */,
 				E4ACC9A0170557510001F996 /* ATPopularViewController.m in Sources */,
+<<<<<<< HEAD
+				618F581517057696005527B3 /* ATQuestionViewController.m in Sources */,
+				618F581B17057B0B005527B3 /* ATBaseViewController.m in Sources */,
+				618F5821170580D3005527B3 /* ATAnswerCell.m in Sources */,
+=======
 				E46C057617057160009C0554 /* ATSingleQuestionViewController.m in Sources */,
 				E46C0579170574DF009C0554 /* ATChooseGenderViewController.m in Sources */,
+>>>>>>> 1c72cc5b5c77e15909b8e81bab31fdec586f42e6
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

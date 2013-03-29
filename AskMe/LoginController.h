@@ -12,6 +12,8 @@
 
 - (void) userLoginSuccess;
 - (void) newUserSignUp;
+- (void) userLoginFail;
+- (void) newUserSignUpFail;
 
 @end
 

@@ -8,6 +8,23 @@
 
 #import <Foundation/Foundation.h>
 
-@interface QuestionModel : NSObject
+#import <Parse/Parse.h>
+
+
+#pragma mark - PFObject Question Class
+// Class key
+extern NSString *const kATQuestionClassKey;
+
+// Field keys
+extern NSString *const kATQuestionBodyKey;
+extern NSString *const kATQuestionUserKey;
+
+@interface QuestionModel : PFObject {
+    
+}
+
++ (QuestionModel*)newQuestion;
+
+@property (nonatomic, strong) NSString *body;
 
 @end

@@ -42,9 +42,19 @@
     
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:backButton];
     
-    UIBarButtonItem *newQuestionBtn = [[UIBarButtonItem alloc] initWithImage:nil style:UIBarButtonItemStylePlain target:self action:@selector(createNewQuestion)];
-    self.navigationItem.rightBarButtonItem = newQuestionBtn;
-    self.navigationItem.titleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 30)];
+    UIButton *createNew = [UIButton buttonWithType:UIButtonTypeCustom];
+    createNew.frame = CGRectMake(0, 0, 44, 44);
+    UIImage *createNewImage = [UIImage imageNamed:@"postbtn@2x.png"];
+    [createNew setBackgroundImage:createNewImage forState:UIControlStateNormal];
+    [createNew addTarget:self action:@selector(createNewQuestion) forControlEvents:UIControlEventTouchUpInside];
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:createNew];
+    
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 44)];
+    titleLabel.backgroundColor = [UIColor clearColor];
+    titleLabel.text = @"Popular";
+    titleLabel.textColor = [UIColor whiteColor];
+    self.navigationItem.titleView = titleLabel;
     
 }
 

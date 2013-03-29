@@ -12,4 +12,7 @@
 
 - (IBAction)chooseMale:(id)sender;
 - (IBAction)chooseFemale:(id)sender;
+
+
+
 @end

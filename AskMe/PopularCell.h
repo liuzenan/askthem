@@ -12,6 +12,5 @@
 
 @property (nonatomic, weak) IBOutlet UILabel *titleLabel;
 @property (nonatomic, weak) IBOutlet UILabel *bodyLabel;
-@property ()
 
 @end

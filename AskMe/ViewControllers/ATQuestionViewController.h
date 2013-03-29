@@ -20,6 +20,7 @@
     
     UIWebView *questionWebView;
     UITableView *_tableView;
+    UILabel *emptyLabel;
     
     UIView *replyBar;
     UITextView *replyTextView;

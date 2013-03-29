@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "LoginController.h"
+//#import "LoginController.h"
 
-@interface ViewController : UIViewController<LoginDelegate>
+@interface ViewController : UIViewController
 
-@property (nonatomic, strong) LoginController *loginController;
-- (IBAction)fbLoginBtn:(id)sender;
+//@property (nonatomic, strong) LoginController *loginController;
+//- (IBAction)fbLoginBtn:(id)sender;
 
 @end

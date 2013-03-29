@@ -18,7 +18,10 @@
     UIView *questionView;
     UIScrollView *_scrollView;
     
-    UIWebView *questionWebView;
+    //UIWebView *questionWebView;
+    UITextView *titleTextView;
+    UITextView *bodyTextView;
+    
     UITableView *_tableView;
     UILabel *emptyLabel;
     

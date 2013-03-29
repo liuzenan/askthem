@@ -19,10 +19,19 @@
     [PFFacebookUtils initializeFacebook];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
-    
+
+    // Prints available fonts
+    for ( NSString *familyName in [UIFont familyNames] ) {
+        
+        if ([familyName rangeOfString:@"oxim"].location == NSNotFound){
+            //NSLog(@"not found");
+        }else{
+            NSLog(@"Family %@", familyName); NSLog(@"Names = %@", [UIFont fontNamesForFamilyName:familyName]);
+        }
+    }
     
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackOpaque];
-    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"navBarBg"] forBarMetrics:UIBarMetricsDefault];
+    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"headerbg"] forBarMetrics:UIBarMetricsDefault];
     [[UINavigationBar appearance] setTintColor:[UIColor blackColor]];
     [[UINavigationBar appearance] setTitleTextAttributes:
      [NSDictionary dictionaryWithObjectsAndKeys:
@@ -30,9 +39,10 @@
       UITextAttributeTextColor,
       [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.8],
       UITextAttributeTextShadowColor,
-      [NSValue valueWithUIOffset:UIOffsetMake(0, -1)],
+      [NSValue valueWithUIOffset:UIOffsetMake(0, 1)],
       UITextAttributeTextShadowOffset,
-      [UIFont fontWithName:@"HelveticaNeueLTStd-MdCn" size:20.0],
+      //[UIFont fontWithName:@"ProximaNovaBold" size:16.0],
+      [UIFont systemFontOfSize:16.0],
       UITextAttributeFont,
       nil]];
     [[UINavigationBar appearance] setTitleVerticalPositionAdjustment:5 forBarMetrics:UIBarMetricsDefault];

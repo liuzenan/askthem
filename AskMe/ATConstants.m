@@ -8,6 +8,3 @@
 
 #import "ATConstants.h"
 
-@implementation ATConstants
-
-@end

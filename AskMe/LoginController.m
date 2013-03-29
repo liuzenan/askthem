@@ -21,13 +21,16 @@
         if (!user) {
             if (!error) {
                 NSLog(@"Uh oh. The user cancelled the Facebook login.");
+                
             } else {
                 NSLog(@"Uh oh. An error occurred: %@", error);
             }
         } else if (user.isNew) {
             NSLog(@"User with facebook signed up and logged in!");
+            [self.delegate newUserSignUp];
         } else {
             NSLog(@"User with facebook logged in!");
+            [self.delegate userLoginSuccess];
         }
     }];
 }

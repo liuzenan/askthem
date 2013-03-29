@@ -43,6 +43,7 @@
 		E4ACC99917054A050001F996 /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4ACC99817054A050001F996 /* LoginController.m */; };
 		E4ACC99B17054E120001F996 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4ACC99A17054E120001F996 /* FacebookSDK.framework */; };
 		E4ACC99D17054F680001F996 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E4ACC99C17054F680001F996 /* libsqlite3.dylib */; };
+		E4ACC9A0170557510001F996 /* ATPopularViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4ACC99F170557510001F996 /* ATPopularViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -97,6 +98,8 @@
 		E4ACC99817054A050001F996 /* LoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginController.m; sourceTree = "<group>"; };
 		E4ACC99A17054E120001F996 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		E4ACC99C17054F680001F996 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		E4ACC99E170557510001F996 /* ATPopularViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATPopularViewController.h; sourceTree = "<group>"; };
+		E4ACC99F170557510001F996 /* ATPopularViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATPopularViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,6 +231,8 @@
 				E4ACC99717054A050001F996 /* LoginController.h */,
 				E4ACC99817054A050001F996 /* LoginController.m */,
 				E4ACC94D17053A230001F996 /* Supporting Files */,
+				E4ACC99E170557510001F996 /* ATPopularViewController.h */,
+				E4ACC99F170557510001F996 /* ATPopularViewController.m */,
 			);
 			path = AskMe;
 			sourceTree = "<group>";
@@ -352,6 +357,7 @@
 				614F990A17056AD100CA63CD /* MBProgressHUD.m in Sources */,
 				614F991017056B8B00CA63CD /* ATAnswerController.m in Sources */,
 				614F991117056B8B00CA63CD /* ATQuestionController.m in Sources */,
+				E4ACC9A0170557510001F996 /* ATPopularViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,7 +12,7 @@
 
 @protocol ATNewQuestionDelegate;
 
-@interface ATNewQuestionViewController : UIViewController <UITextViewDelegate, UITextFieldDelegate> {
+@interface ATNewQuestionViewController : UIViewController <UITextViewDelegate, UITextFieldDelegate, UIAlertViewDelegate> {
     
     // UI
     

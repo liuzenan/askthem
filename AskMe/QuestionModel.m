@@ -22,7 +22,7 @@ NSString *const kATQuestionUserKey  = @"user";
 @synthesize title, body;
 
 + (QuestionModel*)newQuestion{
-    id question = [PFObject objectWithClassName:kATQuestionClassKey];
+    QuestionModel *question = (QuestionModel*)[PFObject objectWithClassName:kATQuestionClassKey];
     if (question){
         
     }
@@ -31,6 +31,11 @@ NSString *const kATQuestionUserKey  = @"user";
 
 - (NSString *)title{
     return [self objectForKey:kATQuestionTitleKey];
+}
+
+- (void)setTitle:(NSString *)title{
+    [self setObject:title forKey:kATQuestionTitleKey];
+    
 }
 
 - (NSString *)body{

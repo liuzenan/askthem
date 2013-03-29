@@ -62,7 +62,7 @@
 
 - (void)getAnswersWithQuestion:(PFObject*)question onComplete:(PFArrayResultBlock)block{
     NSLog(@"getQuestionAnswers");
-    PFQuery *query = [PFQuery queryWithClassName:kATQuestionClassKey];
+    PFQuery *query = [PFQuery queryWithClassName:kATAnswerClassKey];
     [query whereKey:@"question" equalTo:question];
     
     [query orderByDescending:@"likes"];

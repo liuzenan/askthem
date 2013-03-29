@@ -40,12 +40,18 @@
 - (void)initDefaultBackButton{
     
     UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    backButton.frame = CGRectMake(0, 0, 49, 49);
+    backButton.frame = CGRectMake(-20, 0, 49, 49);
     [backButton setBackgroundImage:[UIImage imageNamed:@"backbtn"] forState:UIControlStateNormal];
     backButton.backgroundColor = [UIColor clearColor];
-    [backButton addTarget:self action:@selector(backButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    [backButton addTarget:self action:@selector(backButtonTapped) forControlEvents:UIControlEventTouchUpInside];
     
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:backButton];
 }
+
+- (void)backButtonTapped{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+
 
 @end

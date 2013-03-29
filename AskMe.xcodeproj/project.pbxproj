@@ -16,6 +16,7 @@
 		618F581817057A9A005527B3 /* icon_share@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 618F581717057A9A005527B3 /* icon_share@2x.png */; };
 		618F581B17057B0B005527B3 /* ATBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 618F581A17057B0B005527B3 /* ATBaseViewController.m */; };
 		618F5821170580D3005527B3 /* ATAnswerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 618F5820170580D3005527B3 /* ATAnswerCell.m */; };
+		618F582517059BB2005527B3 /* UIView+LayoutHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 618F582417059BB2005527B3 /* UIView+LayoutHelper.m */; };
 		E46C0579170574DF009C0554 /* ATChooseGenderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E46C0578170574DF009C0554 /* ATChooseGenderViewController.m */; };
 		E46C057B170584FB009C0554 /* ATConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = E46C057A170584FB009C0554 /* ATConstants.m */; };
 		E46C058917058B4F009C0554 /* PopularCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E46C058817058B4F009C0554 /* PopularCell.m */; };
@@ -86,6 +87,8 @@
 		618F581A17057B0B005527B3 /* ATBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ATBaseViewController.m; path = ViewControllers/ATBaseViewController.m; sourceTree = "<group>"; };
 		618F581F170580D3005527B3 /* ATAnswerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ATAnswerCell.h; path = Cells/ATAnswerCell.h; sourceTree = "<group>"; };
 		618F5820170580D3005527B3 /* ATAnswerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ATAnswerCell.m; path = Cells/ATAnswerCell.m; sourceTree = "<group>"; };
+		618F582317059BB2005527B3 /* UIView+LayoutHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+LayoutHelper.h"; sourceTree = "<group>"; };
+		618F582417059BB2005527B3 /* UIView+LayoutHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+LayoutHelper.m"; sourceTree = "<group>"; };
 		E46C0577170574DF009C0554 /* ATChooseGenderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATChooseGenderViewController.h; sourceTree = "<group>"; };
 		E46C0578170574DF009C0554 /* ATChooseGenderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATChooseGenderViewController.m; sourceTree = "<group>"; };
 		E46C057A170584FB009C0554 /* ATConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATConstants.m; sourceTree = "<group>"; };
@@ -209,6 +212,7 @@
 		614F990617056AD100CA63CD /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				618F582217059BB2005527B3 /* LayoutHelper */,
 				614F990717056AD100CA63CD /* MBProgressHUD */,
 			);
 			path = Libraries;
@@ -275,6 +279,15 @@
 				618F5820170580D3005527B3 /* ATAnswerCell.m */,
 			);
 			name = Cells;
+			sourceTree = "<group>";
+		};
+		618F582217059BB2005527B3 /* LayoutHelper */ = {
+			isa = PBXGroup;
+			children = (
+				618F582317059BB2005527B3 /* UIView+LayoutHelper.h */,
+				618F582417059BB2005527B3 /* UIView+LayoutHelper.m */,
+			);
+			path = LayoutHelper;
 			sourceTree = "<group>";
 		};
 		E4ACC93A17053A230001F996 = {
@@ -490,6 +503,7 @@
 				E46C0579170574DF009C0554 /* ATChooseGenderViewController.m in Sources */,
 				E46C057B170584FB009C0554 /* ATConstants.m in Sources */,
 				E46C058917058B4F009C0554 /* PopularCell.m in Sources */,
+				618F582517059BB2005527B3 /* UIView+LayoutHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ATConstants.h"
+#import "ATQuestionController.h"
 
 @interface ATPopularViewController : UITableViewController
 

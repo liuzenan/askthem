@@ -15,5 +15,5 @@
 #define FEMALE @"female"
 
 #pragma mark - NSNotification
-extern NSString *const ATAppDelegateApplicationDidReceiveRemoteNotification;
+//extern NSString *const ATAppDelegateApplicationDidReceiveRemoteNotification;
 

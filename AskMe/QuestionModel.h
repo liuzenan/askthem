@@ -19,6 +19,7 @@ extern NSString *const kATQuestionClassKey;
 extern NSString *const kATQuestionTitleKey;
 extern NSString *const kATQuestionBodyKey;
 extern NSString *const kATQuestionUserKey;
+extern NSString *const kATQuestionCreatedKey;
 
 @interface QuestionModel : PFObject {
     

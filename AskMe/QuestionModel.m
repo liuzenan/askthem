@@ -16,6 +16,7 @@ NSString *const kATQuestionClassKey = @"Question";
 NSString *const kATQuestionTitleKey  = @"title";
 NSString *const kATQuestionBodyKey  = @"body";
 NSString *const kATQuestionUserKey  = @"user";
+NSString *const kATQuestionCreatedKey  = @"createdAt";
 
 @implementation QuestionModel
 

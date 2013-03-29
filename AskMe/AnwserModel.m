@@ -16,6 +16,7 @@ NSString *const kATAnswerClassKey = @"Answer";
 NSString *const kATAnswerBodyKey  = @"body";
 NSString *const kATAnswerUserKey  = @"user";
 NSString *const kATAnswerQuestionKey  = @"question";
+NSString *const kATAnswerCreatedKey  = @"createdAt";
 
 
 @implementation AnwserModel

@@ -73,15 +73,15 @@
     [backButton setTitle:@"Cancel" forState:UIControlStateNormal];
     [backButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     backButton.titleLabel.font = [UIFont fontWithName:@"HelveticaNeueLTStd-MdCn" size:14.0];
-    backButton.backgroundColor = [UIColor colorWithWhite:0.3 alpha:0.5];
+    //backButton.backgroundColor = [UIColor colorWithWhite:0.3 alpha:0.5];
     [backButton addTarget:self action:@selector(cancelButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
     
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:backButton];
     
     
     UIButton *btnDone = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 70, 44)];
-    //[btnDone setTitle:@"" forState:UIControlStateNormal];
-    [btnDone setBackgroundImage:[UIImage imageNamed:@"navbtnDone"] forState:UIControlStateNormal];
+    [btnDone setTitle:@"Post" forState:UIControlStateNormal];
+    //[btnDone setBackgroundImage:[UIImage imageNamed:@"navbtnDone"] forState:UIControlStateNormal];
     [btnDone addTarget:self action:@selector(doneButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:btnDone];
     
@@ -131,21 +131,21 @@
 #pragma mark - UIAlertViewDelegate
 
 -(void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex{
-//    if (alertView.tag == kTagForDiscardConfirm){
-//        switch (buttonIndex) {
-//            case 0:
-//                //yes, discard
-//                [self backButtonTapped:nil];
-//                break;
-//                
-//            case 1:
-//                //no, do not discard
-//                break;
-//                
-//            default:
-//                break;
-//        }
-//    }
+    if (alertView.tag == kTagForDiscardConfirm){
+        switch (buttonIndex) {
+            case 0:
+                //yes, discard
+                [self _cancelOut];
+                break;
+                
+            case 1:
+                //no, do not discard
+                break;
+                
+            default:
+                break;
+        }
+    }
 }
 
 
@@ -163,77 +163,74 @@
 
 - (void)doneButtonTapped:(id)sender{
     NSLog(@"doneButtonTapped");
-    if (self.delegate){
+
         
+    
+    //[titleTextField resignFirstResponder];
+    //[bodyTextView resignFirstResponder];
+    
+    HUD = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    HUD.labelText = @"Saving";
+    [SHARED_APPLICATION setNetworkActivityIndicatorVisible:YES];
+    
+    
+    
+    //TODO: Title and body are compulsory, do checks
+    
+    BOOL hasMissingFields = NO;
+    if (bodyTextView.text.length == 0){
+        hasMissingFields = YES;
+    }
+    if (titleTextField.text.length == 0){
+        hasMissingFields = YES;
+    }
+    
+    if (hasMissingFields){
+        NSLog(@"hasMissingFields");
+    }else{
+        NSLog(@"noMissingFields");
         
-        NSDictionary *params = @{@"data" : @{@"about" : bodyTextView.text}};
+        /*
+        [Parse setApplicationId:@"XPaKZc3rfrzwo4zoLsvNlSQ2aZj8hxwmFDz7PTc7"
+                      clientKey:@"QxwkCOy1dzjG7DC935BDn04E7pQAYYm9x5mSqCk8"];
         
-        //[titleTextField resignFirstResponder];
-        //[bodyTextView resignFirstResponder];
+        PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
+        [testObject setObject:@"bar" forKey:@"foo"];
+        [testObject save];
+        */
         
-        HUD = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-        HUD.labelText = @"Saving";
-        [SHARED_APPLICATION setNetworkActivityIndicatorVisible:YES];
+        PFObject *question = [PFObject objectWithClassName:@"Question"];
+        [question setObject:titleTextField.text forKey:kATQuestionTitleKey];
+        [question setObject:bodyTextView.text forKey:kATQuestionBodyKey];
         
+        //QuestionModel *newQuestion = [[ATQuestionController shared] createQuestion:bodyTextView.text title:titleTextField.text];
         
-        
-        //TODO: Title and body are compulsory, do checks
-        
-        BOOL hasMissingFields = NO;
-        if (bodyTextView.text.length == 0){
-            hasMissingFields = YES;
-        }
-        if (titleTextField.text.length == 0){
-            hasMissingFields = YES;
-        }
-        
-        QuestionModel *newQuestion = [[ATQuestionController shared] createQuestion:bodyTextView.text title:titleTextField.text];
-        
-        [newQuestion saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        [question saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             NSLog(@"succeeded:%@, error:%@", (succeeded?@"YES":@"NO"), error);
             
             [HUD hide:YES]; [SHARED_APPLICATION setNetworkActivityIndicatorVisible:NO];
             
             
         }];
-        
-        /*
-        [[LDAPIClient sharedClient] postPath:kAPIPathProfileUpdate parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
-            
-            [HUD hide:YES]; [SHARED_APPLICATION setNetworkActivityIndicatorVisible:NO];
-            isSaving = false;
-            
-            NSLog(@"Success updating profile (about me): %@", responseObject);
-            [self.navigationController popViewControllerAnimated:YES];
-        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-            
-            [HUD hide:YES]; [SHARED_APPLICATION setNetworkActivityIndicatorVisible:NO];
-            isSaving = false;
-            
-            NSLog(@"Error while updating profile (about me): %@", error);
-            
-            if (error.code == -1009){
-                UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Oops" message:[error localizedDescription] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-                [av show];
-            }else{
-                UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Oops" message:[error localizedDescription] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-                [av show];
-            }
-        }];
-        */
     }
+    
 }
 
 -(void)cancelButtonTapped:(id)sender{
     
-//    if (![aboutMeTextView.text isEqualToString:self.aboutMe]){
-//        //there are changes
-//        UIAlertView *av = [[UIAlertView alloc]initWithTitle:nil message:@"Discard changes?" delegate:self cancelButtonTitle:@"YES" otherButtonTitles:@"No", nil];
-//        av.tag = kTagForDiscardConfirm;
-//        [av show];
-//    }else{
-//        [self backButtonTapped:sender];
-//    }
+    if (titleTextField.text.length + bodyTextView.text.length > 0){
+        //there are changes
+                UIAlertView *av = [[UIAlertView alloc]initWithTitle:nil message:@"Discard changes?" delegate:self cancelButtonTitle:@"YES" otherButtonTitles:@"No", nil];
+                av.tag = kTagForDiscardConfirm;
+                [av show];
+    }else{
+        [self _cancelOut];
+    }
+    
+}
+
+- (void)_cancelOut{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

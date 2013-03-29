@@ -8,6 +8,30 @@
 
 #import "QuestionModel.h"
 
+#pragma mark - PFObject Question Class
+// Class key
+NSString *const kATQuestionClassKey = @"Question";
+
+// Field keys
+NSString *const kATQuestionBodyKey  = @"boody";
+NSString *const kATQuestionUserKey  = @"user";
+
 @implementation QuestionModel
+
++ (QuestionModel*)newQuestion{
+    id question = [PFObject objectWithClassName:kATQuestionClassKey];
+    if (question){
+        
+    }
+    return question;
+}
+
+- (NSString *)body{
+    return [self objectForKey:kATQuestionBodyKey];
+}
+
+- (void)setBody:(NSString *)body{
+    [self setObject:body forKey:kATQuestionBodyKey];
+}
 
 @end

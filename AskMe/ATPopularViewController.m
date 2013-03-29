@@ -28,6 +28,7 @@
 
 - (void)viewDidLoad
 {
+    NSLog(@"viewDidLoad");
     [super viewDidLoad];
 
     // Uncomment the following line to preserve selection between presentations.
@@ -38,6 +39,15 @@
     self.navigationItem.rightBarButtonItem = newQuestionBtn;
     self.navigationItem.titleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 30)];
     
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    NSLog(@"viewDidAppear");
+    [[ATQuestionController shared] getPopularQuestions:^(NSArray *objects, NSError *error) {
+        self.popularQuestions = objects;
+        NSLog(@"self.popularQuestions:%@", self.popularQuestions);
+        [self.tableView reloadData];
+    }];
 }
 
 - (void)didReceiveMemoryWarning
@@ -71,6 +81,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"PopularQuestionCell";
+    NSLog(@"tableView:%@", tableView);
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     if (cell == nil) {

@@ -78,12 +78,10 @@
     [self.navigationController pushViewController:chooseGender animated:YES];
 }
 
+//TODO: check if still need
 - (void)pushPopularQuestionsViewController{
-    [[ATQuestionController shared] getPopularQuestions:^(NSArray *objects, NSError *error) {
-        ATPopularViewController *popularQuestionsController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"PopularQuestions"];
-        popularQuestionsController.popularQuestions = objects;
-        [self.navigationController pushViewController:popularQuestionsController animated:YES];
-    }];
+    ATPopularViewController *popularQuestionsController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"PopularQuestions"];
+    [self.navigationController pushViewController:popularQuestionsController animated:YES];
 }
 
 - (void)viewWillAppear:(BOOL)animated

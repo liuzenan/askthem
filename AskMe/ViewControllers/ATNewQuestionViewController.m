@@ -113,7 +113,7 @@
 #pragma mark - UITextView delegate
 
 -(BOOL)textViewShouldBeginEditing:(UITextView *)textView{
-    return !isSaving;
+//    return !isSaving;
 }
 
 -(BOOL)textViewShouldEndEditing:(UITextView *)textView{
@@ -131,21 +131,21 @@
 #pragma mark - UIAlertViewDelegate
 
 -(void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex{
-    if (alertView.tag == kTagForDiscardConfirm){
-        switch (buttonIndex) {
-            case 0:
-                //yes, discard
-                [self backButtonTapped:nil];
-                break;
-                
-            case 1:
-                //no, do not discard
-                break;
-                
-            default:
-                break;
-        }
-    }
+//    if (alertView.tag == kTagForDiscardConfirm){
+//        switch (buttonIndex) {
+//            case 0:
+//                //yes, discard
+//                [self backButtonTapped:nil];
+//                break;
+//                
+//            case 1:
+//                //no, do not discard
+//                break;
+//                
+//            default:
+//                break;
+//        }
+//    }
 }
 
 
@@ -224,14 +224,14 @@
 
 -(void)cancelButtonTapped:(id)sender{
     
-    if (![aboutMeTextView.text isEqualToString:self.aboutMe]){
-        //there are changes
-        UIAlertView *av = [[UIAlertView alloc]initWithTitle:nil message:@"Discard changes?" delegate:self cancelButtonTitle:@"YES" otherButtonTitles:@"No", nil];
-        av.tag = kTagForDiscardConfirm;
-        [av show];
-    }else{
-        [self backButtonTapped:sender];
-    }
+//    if (![aboutMeTextView.text isEqualToString:self.aboutMe]){
+//        //there are changes
+//        UIAlertView *av = [[UIAlertView alloc]initWithTitle:nil message:@"Discard changes?" delegate:self cancelButtonTitle:@"YES" otherButtonTitles:@"No", nil];
+//        av.tag = kTagForDiscardConfirm;
+//        [av show];
+//    }else{
+//        [self backButtonTapped:sender];
+//    }
 }
 
 @end

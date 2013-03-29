@@ -10,7 +10,7 @@
 		614F98FF1705665600CA63CD /* ATNewQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 614F98FE1705665600CA63CD /* ATNewQuestionViewController.m */; };
 		614F99021705688600CA63CD /* ATConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 614F99011705688600CA63CD /* ATConstants.m */; };
 		614F99051705690E00CA63CD /* UIColor-Expanded.m in Sources */ = {isa = PBXBuildFile; fileRef = 614F99031705690E00CA63CD /* UIColor-Expanded.m */; };
-		614F990A17056AD100CA63CD /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 614F990917056AD100CA63CD /* MBProgressHUD.m */; };
+		614F990A17056AD100CA63CD /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 614F990917056AD100CA63CD /* MBProgressHUD.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		614F991017056B8B00CA63CD /* ATAnswerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 614F990D17056B8B00CA63CD /* ATAnswerController.m */; };
 		614F991117056B8B00CA63CD /* ATQuestionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 614F990F17056B8B00CA63CD /* ATQuestionController.m */; };
 		E4ACC94717053A230001F996 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4ACC94617053A230001F996 /* UIKit.framework */; };

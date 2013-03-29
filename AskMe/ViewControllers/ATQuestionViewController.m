@@ -28,11 +28,21 @@
     questionWebView.frame = CGRectMake(0, 0, 320, APP_FRAME_HEIGHT-44-KEYPAD_HEIGHT-44);
     [theView addSubview:questionWebView];
     
+    _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, 320, APP_FRAME_HEIGHT-44-KEYPAD_HEIGHT-44) style:UITableViewStylePlain];
+    _tableView.delegate = self;
+    _tableView.dataSource = self;
+    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    //_tableView.backgroundColor = [UIColor colorWithRGBHex:0xF8F8F8];
+    _tableView.backgroundColor = [UIColor clearColor];
+    [theView addSubview:_tableView];
     
-    replyBar = [[UIView alloc]initWithFrame:CGRectMake(0, APP_FRAME_HEIGHT-44-KEYPAD_HEIGHT-44, 320, 44)];
+    
+    replyBar = [[UIView alloc]init];
+    replyBar.frame = CGRectMake(0, APP_FRAME_HEIGHT-44-KEYPAD_HEIGHT-44, 320, 44);
     replyBar.backgroundColor = [UIColor colorWithWhite:0.9 alpha:1.0];
     replyBar.clipsToBounds = YES;
     [theView addSubview:replyBar];
+    replyBar.center = CGPointMake(160, APP_FRAME_HEIGHT);
     
     UIImageView *backBG = [[UIImageView alloc] initWithFrame:CGRectMake(-10, -1, 320+20, 46)];
     backBG.image = [[UIImage imageNamed:@"btn_grad_white_76"] stretchableImageWithLeftCapWidth:6 topCapHeight:10];
@@ -52,11 +62,29 @@
     [submitButton addTarget:self action:@selector(submitAnswer) forControlEvents:UIControlEventTouchUpInside];
     [replyBar addSubview:submitButton];
     
-    self.view = theView;
+    
+    questionView = theView;
+    
+    
+    // Putting it all together
+    
+    _scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, 320, APP_FRAME_HEIGHT-44)];
+    [_scrollView addSubview:questionView];
+    _scrollView.delegate = self;
+    _scrollView.contentSize = questionView.frame.size;
+    _scrollView.scrollEnabled = YES;
+    _scrollView.pagingEnabled = NO;
+    _scrollView.scrollsToTop = YES;
+    _scrollView.contentInset = UIEdgeInsetsMake(0, 0, 64, 0);
+    _scrollView.scrollIndicatorInsets = UIEdgeInsetsMake(0, 0, 64, 0);
+    //_scrollView.backgroundColor = [UIColor yellowColor];
+
+    
+    self.view = _scrollView;
 }
 
 - (void)viewWillAppear:(BOOL)animated{
-    [replyTextView becomeFirstResponder];
+    
 }
 
 - (void)viewDidLoad
@@ -88,12 +116,18 @@
         NSString *html = [NSString stringWithFormat:@"<b>%@</b><br/>%@", title, body];
         [questionWebView loadHTMLString:html baseURL:nil];
         
-        
+        /*
         NSArray *questions;
         [[ATQuestionController shared] getPopularQuestions:^(NSArray *objects, NSError *error) {
             NSLog(@"questions: %@", objects);
         }];
         NSLog(@"questions: %@", questions);
+        */
+        
+        [[ATQuestionController shared] getAnswersWithQuestion:_question onComplete:^(NSArray *objects, NSError *error) {
+            _answers = objects;
+            [self displayAnswers];
+        }];
         
     }
 }
@@ -103,6 +137,84 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+#pragma mark - UITableView
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    //NSLog(@"_replies=%@", _replies);
+    //NSLog(@"_replies.count=%d", _replies.count);
+    NSInteger numberOfRows = _answers.count;
+    return numberOfRows;
+    
+    //return 1;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    
+    UITableViewCell *cell;
+    
+    cell = (UITableViewCell*)[tableView dequeueReusableCellWithIdentifier:@"cell"];
+    if (!cell){
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"];
+        
+    }
+    
+    //cell.delegate = self;
+    //[cell setIndexPath:indexPath withTable:tableView];
+    
+    PFObject *answer = (PFObject*)[_answers objectAtIndex:indexPath.row];
+    
+    cell.textLabel.text = [answer objectForKey:kATAnswerBodyKey];
+    
+    //cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    return cell;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 44;
+}
+
+/*
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 20;
+}
+
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    return [UIView new];
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -135,6 +247,10 @@
         
     }];
 
+}
+
+- (void)displayAnswers{
+    [_tableView reloadData];
 }
 
 @end

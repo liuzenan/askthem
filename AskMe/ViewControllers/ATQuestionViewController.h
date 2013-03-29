@@ -9,11 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "ATBaseViewController.h"
 
-@interface ATQuestionViewController : ATBaseViewController <UITextViewDelegate> {
+@interface ATQuestionViewController : ATBaseViewController <UITextViewDelegate, UITableViewDataSource, UITableViewDelegate> {
     
     PFObject *_question;
+    NSArray *_answers;
     
     // UI
+    UIView *questionView;
+    UIScrollView *_scrollView;
     
     UIWebView *questionWebView;
     UITableView *_tableView;

@@ -166,8 +166,6 @@
     if (self.delegate){
         
         
-        NSDictionary *params = @{@"data" : @{@"about" : bodyTextView.text}};
-        
         //[titleTextField resignFirstResponder];
         //[bodyTextView resignFirstResponder];
         

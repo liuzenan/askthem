@@ -34,10 +34,23 @@
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
+    UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    backButton.frame = CGRectMake(0, 0, 44, 44);
+    UIImage *backBtnImage = [UIImage imageNamed:@"homebtn@2x.png"];
+    [backButton setBackgroundImage:backBtnImage forState:UIControlStateNormal];
+    [backButton addTarget:self action:@selector(selectGender) forControlEvents:UIControlEventTouchUpInside];
+    
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:backButton];
+    
     UIBarButtonItem *newQuestionBtn = [[UIBarButtonItem alloc] initWithImage:nil style:UIBarButtonItemStylePlain target:self action:@selector(createNewQuestion)];
     self.navigationItem.rightBarButtonItem = newQuestionBtn;
     self.navigationItem.titleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 30)];
     
+}
+
+-(void)selectGender
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -45,10 +58,10 @@
     [[ATQuestionController shared] getPopularQuestions:^(NSArray *objects, NSError *error) {
         self.popularQuestions = objects;
         NSLog(@"self.popularQuestions:%@", self.popularQuestions);
-        //[self.tableView reloadData];
+        [self.tableView reloadData];
     }];
     
-    [self createNewQuestion];
+    //[self createNewQuestion];
 }
 
 - (void)didReceiveMemoryWarning
@@ -82,16 +95,20 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"PopularQuestionCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    PopularCell *cell = (PopularCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     if (cell == nil) {
-        cell = [[PopularCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"PopularCell" owner:self options:nil];
+        cell = [nib objectAtIndex:0];
     }
     
     PFObject *question = [self.popularQuestions objectAtIndex:indexPath.row];
     NSLog(@"%@", question);
     NSString *title = [question objectForKey:kATQuestionTitleKey];
+    cell.titleLabel.text = title;
     NSString *body = [question objectForKey:kATQuestionBodyKey];
+    cell.bodyLabel.text = body;
+    [cell.bodyLabel sizeToFit];
     
     // Configure the cell...
     

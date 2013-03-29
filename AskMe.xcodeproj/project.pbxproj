@@ -34,6 +34,7 @@
 		E46C05BE1705941E009C0554 /* postbtn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E46C05B01705941D009C0554 /* postbtn@2x.png */; };
 		E46C05BF1705941E009C0554 /* postmade@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E46C05B11705941E009C0554 /* postmade@2x.png */; };
 		E46C05C11705944A009C0554 /* simple_left@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E46C05C01705944A009C0554 /* simple_left@2x.png */; };
+		E46C05C51705979F009C0554 /* PopularCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E46C05C41705979F009C0554 /* PopularCell.xib */; };
 		E4ACC94717053A230001F996 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4ACC94617053A230001F996 /* UIKit.framework */; };
 		E4ACC94917053A230001F996 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4ACC94817053A230001F996 /* Foundation.framework */; };
 		E4ACC94B17053A230001F996 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4ACC94A17053A230001F996 /* CoreGraphics.framework */; };
@@ -117,6 +118,7 @@
 		E46C05B01705941D009C0554 /* postbtn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "postbtn@2x.png"; sourceTree = "<group>"; };
 		E46C05B11705941E009C0554 /* postmade@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "postmade@2x.png"; sourceTree = "<group>"; };
 		E46C05C01705944A009C0554 /* simple_left@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "simple_left@2x.png"; sourceTree = "<group>"; };
+		E46C05C41705979F009C0554 /* PopularCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopularCell.xib; sourceTree = "<group>"; };
 		E4ACC94317053A230001F996 /* AskMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AskMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4ACC94617053A230001F996 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E4ACC94817053A230001F996 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -344,6 +346,7 @@
 				E4ACC94D17053A230001F996 /* Supporting Files */,
 				E46C058717058B4F009C0554 /* PopularCell.h */,
 				E46C058817058B4F009C0554 /* PopularCell.m */,
+				E46C05C41705979F009C0554 /* PopularCell.xib */,
 			);
 			path = AskMe;
 			sourceTree = "<group>";
@@ -461,6 +464,7 @@
 				E46C05BE1705941E009C0554 /* postbtn@2x.png in Resources */,
 				E46C05BF1705941E009C0554 /* postmade@2x.png in Resources */,
 				E46C05C11705944A009C0554 /* simple_left@2x.png in Resources */,
+				E46C05C51705979F009C0554 /* PopularCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -82,16 +82,20 @@
 {
     static NSString *CellIdentifier = @"PopularQuestionCell";
     NSLog(@"tableView:%@", tableView);
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    PopularCell *cell = (PopularCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     if (cell == nil) {
-        cell = [[PopularCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"PopularCell" owner:self options:nil];
+        cell = [nib objectAtIndex:0];
     }
     
     PFObject *question = [self.popularQuestions objectAtIndex:indexPath.row];
     NSLog(@"%@", question);
     NSString *title = [question objectForKey:kATQuestionTitleKey];
+    cell.titleLabel.text = title;
     NSString *body = [question objectForKey:kATQuestionBodyKey];
+    cell.bodyLabel.text = body;
+    [cell.bodyLabel sizeToFit];
     
     // Configure the cell...
     

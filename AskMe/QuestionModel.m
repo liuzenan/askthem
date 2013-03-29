@@ -13,6 +13,7 @@
 NSString *const kATQuestionClassKey = @"Question";
 
 // Field keys
+NSString *const kATQuestionIDKey = @"objectId";
 NSString *const kATQuestionTitleKey  = @"title";
 NSString *const kATQuestionBodyKey  = @"body";
 NSString *const kATQuestionUserKey  = @"user";

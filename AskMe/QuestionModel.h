@@ -16,6 +16,7 @@
 extern NSString *const kATQuestionClassKey;
 
 // Field keys
+extern NSString *const kATQuestionIDKey;
 extern NSString *const kATQuestionTitleKey;
 extern NSString *const kATQuestionBodyKey;
 extern NSString *const kATQuestionUserKey;

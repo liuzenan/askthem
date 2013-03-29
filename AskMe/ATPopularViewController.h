@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ATConstants.h"
 
 @interface ATPopularViewController : UITableViewController
+
+@property (nonatomic, strong) NSArray *popularQuestions;
 
 @end

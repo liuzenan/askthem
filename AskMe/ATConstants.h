@@ -12,7 +12,7 @@
 #define USER_GENDER_KEY @"gender"
 #define MALE @"male"
 #define FEMALE @"female"
-
+#define STORYBOARD_IPHONE @"MainStoryboard"
 
 #pragma mark - NSNotification
 extern NSString *const ATAppDelegateApplicationDidReceiveRemoteNotification;

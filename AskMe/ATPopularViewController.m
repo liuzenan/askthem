@@ -7,6 +7,8 @@
 //
 
 #import "ATPopularViewController.h"
+#import "ATSingleQuestionViewController.h"
+#import "ATNewQuestionViewController.h"
 
 @interface ATPopularViewController ()
 
@@ -31,13 +33,22 @@
     // self.clearsSelectionOnViewWillAppear = NO;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    UIBarButtonItem *newQuestionBtn = [[UIBarButtonItem alloc] initWithImage:nil style:UIBarButtonItemStylePlain target:self action:@selector(createNewQuestion)];
+    self.navigationItem.rightBarButtonItem = newQuestionBtn;
+    self.navigationItem.titleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 30)];
+    
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void) createNewQuestion
+{
+    ATNewQuestionViewController *newQuestion = [[UIStoryboard storyboardWithName:STORYBOARD_IPHONE bundle:nil] instantiateViewControllerWithIdentifier:@"AskQuestion"];
+    [self.navigationController pushViewController:newQuestion animated:YES];
 }
 
 #pragma mark - Table view data source
@@ -109,13 +120,22 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
+
+    ATSingleQuestionViewController *singleQuestionViewController = [[UIStoryboard storyboardWithName:STORYBOARD_IPHONE bundle:nil] instantiateViewControllerWithIdentifier:@"SingleQuestion"];
      // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+     [self.navigationController pushViewController:singleQuestionViewController animated:YES];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    
+    [super viewWillAppear:animated];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    
+    [super viewWillDisappear:animated];
 }
 
 @end

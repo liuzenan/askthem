@@ -29,6 +29,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.navigationItem.hidesBackButton = YES;
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -51,5 +52,26 @@
     ATPopularViewController *popularQuestions = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"PopularQuestions"];
     [self.navigationController pushViewController:popularQuestions animated:YES];
 
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    NSString *gender = [[NSUserDefaults standardUserDefaults] objectForKey:USER_GENDER_KEY];
+    
+    if ([gender isEqualToString:MALE]) {
+        NSLog(@"male");
+    } else if ([gender isEqualToString:FEMALE]) {
+        NSLog(@"female");
+    } else {
+        NSLog(@"null");
+    }
+    
+    [super viewWillAppear:animated];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+
+    [super viewWillDisappear:animated];
 }
 @end

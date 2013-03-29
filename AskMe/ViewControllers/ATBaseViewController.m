@@ -40,8 +40,8 @@
 - (void)initDefaultBackButton{
     
     UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    backButton.frame = CGRectMake(0, 0, 44, 44);
-    [backButton setBackgroundImage:[UIImage imageNamed:@"simple_left"] forState:UIControlStateNormal];
+    backButton.frame = CGRectMake(0, 0, 49, 49);
+    [backButton setBackgroundImage:[UIImage imageNamed:@"backbtn"] forState:UIControlStateNormal];
     backButton.backgroundColor = [UIColor clearColor];
     [backButton addTarget:self action:@selector(backButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
     

@@ -34,7 +34,6 @@
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     UIBarButtonItem *newQuestionBtn = [[UIBarButtonItem alloc] initWithImage:nil style:UIBarButtonItemStylePlain target:self action:@selector(createNewQuestion)];
     self.navigationItem.rightBarButtonItem = newQuestionBtn;
     self.navigationItem.titleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 30)];
@@ -46,8 +45,10 @@
     [[ATQuestionController shared] getPopularQuestions:^(NSArray *objects, NSError *error) {
         self.popularQuestions = objects;
         NSLog(@"self.popularQuestions:%@", self.popularQuestions);
-        [self.tableView reloadData];
+        //[self.tableView reloadData];
     }];
+    
+    [self createNewQuestion];
 }
 
 - (void)didReceiveMemoryWarning
@@ -81,7 +82,6 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"PopularQuestionCell";
-    NSLog(@"tableView:%@", tableView);
     PopularCell *cell = (PopularCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     if (cell == nil) {

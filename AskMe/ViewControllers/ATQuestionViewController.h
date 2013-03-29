@@ -20,12 +20,17 @@
     
     UIWebView *questionWebView;
     UITableView *_tableView;
+    UILabel *emptyLabel;
     
     UIView *replyBar;
     UITextView *replyTextView;
     UIButton *submitButton;
     
     UIButton *shareButton;
+    
+    UIView *footer;
+    UIButton *answerButton;
+    UIButton *laterButton;
     
 }
 

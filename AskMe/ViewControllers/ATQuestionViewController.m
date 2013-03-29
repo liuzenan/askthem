@@ -28,7 +28,15 @@
     questionWebView.frame = CGRectMake(0, 0, 320, APP_FRAME_HEIGHT-44-KEYPAD_HEIGHT-44);
     [theView addSubview:questionWebView];
     
-    _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, 320, APP_FRAME_HEIGHT-44-KEYPAD_HEIGHT-44) style:UITableViewStylePlain];
+    emptyLabel = [[UILabel alloc] init];
+    emptyLabel.frame = CGRectMake(0, questionWebView.bounds.size.height + 20, 320, 44);
+    emptyLabel.text = @"No responses yet, be the first one to advise!";
+    emptyLabel.font = [UIFont systemFontOfSize:12.0];
+    emptyLabel.textAlignment = NSTextAlignmentCenter;
+    emptyLabel.numberOfLines = 2;
+    [theView addSubview:emptyLabel];
+    
+    _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, questionWebView.bounds.size.height, 320, APP_FRAME_HEIGHT-44-KEYPAD_HEIGHT-44) style:UITableViewStylePlain];
     _tableView.delegate = self;
     _tableView.dataSource = self;
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -65,8 +73,24 @@
     
     questionView = theView;
     
+    footer = [UIView new];
+    footer.frame = CGRectMake(0, 0, 320, 49);
+    
+    answerButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    answerButton.frame = CGRectMake(0, 0, 160, 49);
+    [answerButton setBackgroundImage:[UIImage imageNamed:@"giveadvicebtn"] forState:UIControlStateNormal];
+    [answerButton addTarget:self action:@selector(submitAnswer) forControlEvents:UIControlEventTouchUpInside];
+    [footer addSubview:answerButton];
+    
+    laterButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    laterButton.frame = CGRectMake(160, 0, 160, 49);
+    [laterButton setBackgroundImage:[UIImage imageNamed:@"maybelaterbtn"] forState:UIControlStateNormal];
+    [laterButton addTarget:self action:@selector(maybeLatertapped) forControlEvents:UIControlEventTouchUpInside];
+    [footer addSubview:laterButton];
+    
     
     // Putting it all together
+    
     
     _scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, 320, APP_FRAME_HEIGHT-44)];
     [_scrollView addSubview:questionView];
@@ -78,9 +102,17 @@
     _scrollView.contentInset = UIEdgeInsetsMake(0, 0, 64, 0);
     _scrollView.scrollIndicatorInsets = UIEdgeInsetsMake(0, 0, 64, 0);
     //_scrollView.backgroundColor = [UIColor yellowColor];
-
     
-    self.view = _scrollView;
+    
+    theView = [[UIView alloc]init];
+    theView.frame = CGRectMake(0, 0, 320, APP_FRAME_HEIGHT);
+    theView.backgroundColor = [UIColor colorWithRGBHex:0xe8e8e8];
+    
+    [theView addSubview:_scrollView];
+    [theView addSubview:footer];
+    footer.center = CGPointMake(160, APP_FRAME_HEIGHT - 44 - (49/2));
+    
+    self.view = theView;
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -251,6 +283,15 @@
 
 - (void)displayAnswers{
     [_tableView reloadData];
+    if (_answers.count == 0){
+        emptyLabel.alpha = 1.0;
+    }else{
+        emptyLabel.alpha = 0.0;
+    }
+}
+
+- (void)maybeLatertapped{
+    
 }
 
 @end

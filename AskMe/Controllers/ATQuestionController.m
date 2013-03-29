@@ -22,11 +22,13 @@
     return _sharedObject;
 }
 
-- (void)createQuestion:(NSString *)body{
+- (QuestionModel*)createQuestion:(NSString *)body title:(NSString *)title {
     
     QuestionModel *question = [QuestionModel newQuestion];
+    question.title = title;
     question.body = body;
     
+    return question;
 }
 
 - (void)saveQuestion:(QuestionModel *)question{

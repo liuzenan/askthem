@@ -17,7 +17,7 @@
 
 + (ATQuestionController*)shared;
 
-- (void)createQuestion:(NSString*)body;
+- (QuestionModel*)createQuestion:(NSString*)body title:(NSString*)title;
 
 - (void)saveQuestion:(QuestionModel*)question;
 

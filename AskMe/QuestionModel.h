@@ -16,6 +16,7 @@
 extern NSString *const kATQuestionClassKey;
 
 // Field keys
+extern NSString *const kATQuestionTitleKey;
 extern NSString *const kATQuestionBodyKey;
 extern NSString *const kATQuestionUserKey;
 
@@ -25,6 +26,7 @@ extern NSString *const kATQuestionUserKey;
 
 + (QuestionModel*)newQuestion;
 
+@property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSString *body;
 
 @end

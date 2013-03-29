@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		614F98FF1705665600CA63CD /* ATNewQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 614F98FE1705665600CA63CD /* ATNewQuestionViewController.m */; };
+		614F99021705688600CA63CD /* ATConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 614F99011705688600CA63CD /* ATConstants.m */; };
+		614F99051705690E00CA63CD /* UIColor-Expanded.m in Sources */ = {isa = PBXBuildFile; fileRef = 614F99031705690E00CA63CD /* UIColor-Expanded.m */; };
+		614F990A17056AD100CA63CD /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 614F990917056AD100CA63CD /* MBProgressHUD.m */; };
+		614F991017056B8B00CA63CD /* ATAnswerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 614F990D17056B8B00CA63CD /* ATAnswerController.m */; };
+		614F991117056B8B00CA63CD /* ATQuestionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 614F990F17056B8B00CA63CD /* ATQuestionController.m */; };
 		E4ACC94717053A230001F996 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4ACC94617053A230001F996 /* UIKit.framework */; };
 		E4ACC94917053A230001F996 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4ACC94817053A230001F996 /* Foundation.framework */; };
 		E4ACC94B17053A230001F996 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4ACC94A17053A230001F996 /* CoreGraphics.framework */; };
@@ -40,6 +46,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		614F98FD1705665600CA63CD /* ATNewQuestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ATNewQuestionViewController.h; path = ViewControllers/ATNewQuestionViewController.h; sourceTree = "<group>"; };
+		614F98FE1705665600CA63CD /* ATNewQuestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ATNewQuestionViewController.m; path = ViewControllers/ATNewQuestionViewController.m; sourceTree = "<group>"; };
+		614F99001705688600CA63CD /* ATConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATConstants.h; sourceTree = "<group>"; };
+		614F99011705688600CA63CD /* ATConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATConstants.m; sourceTree = "<group>"; };
+		614F99031705690E00CA63CD /* UIColor-Expanded.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor-Expanded.m"; sourceTree = "<group>"; };
+		614F99041705690E00CA63CD /* UIColor-Expanded.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor-Expanded.h"; sourceTree = "<group>"; };
+		614F990817056AD100CA63CD /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		614F990917056AD100CA63CD /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		614F990C17056B8B00CA63CD /* ATAnswerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATAnswerController.h; sourceTree = "<group>"; };
+		614F990D17056B8B00CA63CD /* ATAnswerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATAnswerController.m; sourceTree = "<group>"; };
+		614F990E17056B8B00CA63CD /* ATQuestionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATQuestionController.h; sourceTree = "<group>"; };
+		614F990F17056B8B00CA63CD /* ATQuestionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATQuestionController.m; sourceTree = "<group>"; };
 		E4ACC94317053A230001F996 /* AskMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AskMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4ACC94617053A230001F996 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E4ACC94817053A230001F996 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -110,6 +128,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		614F98FC1705663100CA63CD /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				614F98FD1705665600CA63CD /* ATNewQuestionViewController.h */,
+				614F98FE1705665600CA63CD /* ATNewQuestionViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		614F990617056AD100CA63CD /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				614F990717056AD100CA63CD /* MBProgressHUD */,
+			);
+			path = Libraries;
+			sourceTree = "<group>";
+		};
+		614F990717056AD100CA63CD /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				614F990817056AD100CA63CD /* MBProgressHUD.h */,
+				614F990917056AD100CA63CD /* MBProgressHUD.m */,
+			);
+			path = MBProgressHUD;
+			sourceTree = "<group>";
+		};
+		614F990B17056B8B00CA63CD /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				614F990C17056B8B00CA63CD /* ATAnswerController.h */,
+				614F990D17056B8B00CA63CD /* ATAnswerController.m */,
+				614F990E17056B8B00CA63CD /* ATQuestionController.h */,
+				614F990F17056B8B00CA63CD /* ATQuestionController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		E4ACC93A17053A230001F996 = {
 			isa = PBXGroup;
 			children = (
@@ -155,6 +210,13 @@
 		E4ACC94C17053A230001F996 /* AskMe */ = {
 			isa = PBXGroup;
 			children = (
+				614F99031705690E00CA63CD /* UIColor-Expanded.m */,
+				614F99041705690E00CA63CD /* UIColor-Expanded.h */,
+				614F990B17056B8B00CA63CD /* Controllers */,
+				614F99001705688600CA63CD /* ATConstants.h */,
+				614F990617056AD100CA63CD /* Libraries */,
+				614F99011705688600CA63CD /* ATConstants.m */,
+				614F98FC1705663100CA63CD /* ViewControllers */,
 				E4ACC985170547F70001F996 /* Anwser */,
 				E4ACC984170547EE0001F996 /* Question */,
 				E4ACC983170547EA0001F996 /* User */,
@@ -284,6 +346,12 @@
 				E4ACC98B1705482E0001F996 /* QuestionModel.m in Sources */,
 				E4ACC98E1705483B0001F996 /* AnwserModel.m in Sources */,
 				E4ACC99917054A050001F996 /* LoginController.m in Sources */,
+				614F98FF1705665600CA63CD /* ATNewQuestionViewController.m in Sources */,
+				614F99021705688600CA63CD /* ATConstants.m in Sources */,
+				614F99051705690E00CA63CD /* UIColor-Expanded.m in Sources */,
+				614F990A17056AD100CA63CD /* MBProgressHUD.m in Sources */,
+				614F991017056B8B00CA63CD /* ATAnswerController.m in Sources */,
+				614F991117056B8B00CA63CD /* ATQuestionController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

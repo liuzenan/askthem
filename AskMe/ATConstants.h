@@ -7,6 +7,10 @@
 //
 
 
+#define SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
+#define APP_FRAME_HEIGHT (SCREEN_HEIGHT-20)
+
+
 #pragma mark - NSNotification
 extern NSString *const ATAppDelegateApplicationDidReceiveRemoteNotification;
 

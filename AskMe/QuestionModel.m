@@ -13,10 +13,13 @@
 NSString *const kATQuestionClassKey = @"Question";
 
 // Field keys
-NSString *const kATQuestionBodyKey  = @"boody";
+NSString *const kATQuestionTitleKey  = @"title";
+NSString *const kATQuestionBodyKey  = @"body";
 NSString *const kATQuestionUserKey  = @"user";
 
 @implementation QuestionModel
+
+@synthesize title, body;
 
 + (QuestionModel*)newQuestion{
     id question = [PFObject objectWithClassName:kATQuestionClassKey];
@@ -24,6 +27,10 @@ NSString *const kATQuestionUserKey  = @"user";
         
     }
     return question;
+}
+
+- (NSString *)title{
+    return [self objectForKey:kATQuestionTitleKey];
 }
 
 - (NSString *)body{

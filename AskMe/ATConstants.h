@@ -9,6 +9,9 @@
 
 #define SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
 #define APP_FRAME_HEIGHT (SCREEN_HEIGHT-20)
+#define USER_GENDER_KEY @"gender"
+#define MALE @"male"
+#define FEMALE @"female"
 
 
 #pragma mark - NSNotification

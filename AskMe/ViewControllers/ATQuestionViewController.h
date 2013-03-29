@@ -27,6 +27,10 @@
     
     UIButton *shareButton;
     
+    UIView *footer;
+    UIButton *answerButton;
+    UIButton *laterButton;
+    
 }
 
 @property (nonatomic, strong) NSString *questionID;

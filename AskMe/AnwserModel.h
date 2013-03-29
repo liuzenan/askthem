@@ -8,6 +8,20 @@
 
 #import <Foundation/Foundation.h>
 
-@interface AnwserModel : NSObject
+#import <Parse/Parse.h>
+
+
+#pragma mark - PFObject Question Class
+// Class key
+extern NSString *const kATAnswerClassKey;
+
+// Field keys
+extern NSString *const kATAnswerBodyKey;
+extern NSString *const kATAnswerUserKey;
+extern NSString *const kATAnswerQuestionKey;
+
+@interface AnwserModel : PFObject {
+    
+}
 
 @end

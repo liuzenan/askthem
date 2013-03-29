@@ -8,6 +8,16 @@
 
 #import "AnwserModel.h"
 
+#pragma mark - PFObject Answer Class
+// Class key
+NSString *const kATAnswerClassKey = @"Answer";
+
+// Field keys
+NSString *const kATAnswerBodyKey  = @"body";
+NSString *const kATAnswerUserKey  = @"user";
+NSString *const kATAnswerQuestionKey  = @"question";
+
+
 @implementation AnwserModel
 
 @end

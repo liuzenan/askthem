@@ -37,6 +37,28 @@
     }];
 }
 
+- (void)getPopularQuestions:(PFArrayResultBlock)block{
+  
+    NSLog(@"getPopularQuestions");
+    PFQuery *query = [PFQuery queryWithClassName:kATQuestionClassKey];
+    //[query whereKey:@"playerName" equalTo:@"Dan Stemkoski"];
+    
+    [query orderByDescending:@"likes"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            // The find succeeded.
+            NSLog(@"Successfully retrieved %d questions.", objects.count);
+            
+            if (block){
+                block(objects, error);
+            }
+            
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+}
 
 
 

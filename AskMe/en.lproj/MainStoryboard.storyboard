@@ -41,17 +41,40 @@
         <scene sceneID="Qhk-Jc-W0f">
             <objects>
                 <tableViewController storyboardIdentifier="PopularQuestions" title="Popular Questions" useStoryboardIdentifierAsRestorationIdentifier="YES" id="q9b-hW-edS" customClass="ATPopularViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="REG-7l-kOS">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="72" sectionHeaderHeight="22" sectionFooterHeight="22" id="REG-7l-kOS">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="RFV-Gt-IJr">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="PopularQuestionCell" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PopularQuestionCell" rowHeight="72" id="RFV-Gt-IJr" customClass="PopularCell">
+                                <rect key="frame" x="0.0" y="22" width="320" height="72"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="71"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jgm-7w-vXn">
+                                            <rect key="frame" x="20" y="4" width="42" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dOZ-1z-UZF">
+                                            <rect key="frame" x="20" y="24" width="42" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yzq-i2-mpr">
+                                            <rect key="frame" x="258" y="4" width="42" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                             </tableViewCell>
@@ -156,10 +179,10 @@
             </objects>
             <point key="canvasLocation" x="1527" y="-862"/>
         </scene>
-        <!--View Controller - SingleQuestion-->
+        <!--Question View Controller - SingleQuestion-->
         <scene sceneID="P8X-bD-aWs">
             <objects>
-                <viewController storyboardIdentifier="SingleQuestion" title="SingleQuestion" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Nc9-YU-6mh" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SingleQuestion" title="SingleQuestion" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Nc9-YU-6mh" customClass="ATQuestionViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fj7-Vp-0NY">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -208,6 +231,9 @@
         </scene>
     </scenes>
     <classes>
+        <class className="ATBaseViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ATBaseViewController.h"/>
+        </class>
         <class className="ATChooseGenderViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ATChooseGenderViewController.h"/>
             <relationships>
@@ -215,11 +241,17 @@
                 <relationship kind="action" name="chooseMale:"/>
             </relationships>
         </class>
-        <class className="ATNewQuestionViewController" superclassName="UIViewController">
+        <class className="ATNewQuestionViewController" superclassName="ATBaseViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ATNewQuestionViewController.h"/>
         </class>
         <class className="ATPopularViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ATPopularViewController.h"/>
+        </class>
+        <class className="ATQuestionViewController" superclassName="ATBaseViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ATQuestionViewController.h"/>
+        </class>
+        <class className="PopularCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PopularCell.h"/>
         </class>
         <class className="ViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>

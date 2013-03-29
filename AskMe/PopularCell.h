@@ -1,5 +1,5 @@
 //
-//  ATSingleQuestionViewController.h
+//  PopularCell.h
 //  AskMe
 //
 //  Created by Zenan on 29/3/13.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ATSingleQuestionViewController : UIViewController
+@interface PopularCell : UITableViewCell
 
 @end

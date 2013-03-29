@@ -133,7 +133,9 @@
 
     ATQuestionViewController *singleQuestionViewController = [[UIStoryboard storyboardWithName:STORYBOARD_IPHONE bundle:nil] instantiateViewControllerWithIdentifier:@"SingleQuestion"];
      // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:singleQuestionViewController animated:YES];
+    PFObject *question = [self.popularQuestions objectAtIndex:indexPath.row];
+    singleQuestionViewController.questionID = question.objectId;
+    [self.navigationController pushViewController:singleQuestionViewController animated:YES];
 }
 
 - (void)viewWillAppear:(BOOL)animated

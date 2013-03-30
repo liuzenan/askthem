@@ -83,9 +83,10 @@
     self.navigationItem.title = @"New Question";
     
     UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    backButton.frame = CGRectMake(0, 0, 60, 44);
-    [backButton setTitle:@"Cancel" forState:UIControlStateNormal];
-    [backButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    backButton.frame = CGRectMake(0, 0, 49, 49);
+//    [backButton setTitle:@"Cancel" forState:UIControlStateNormal];
+    [backButton setBackgroundImage:[UIImage imageNamed:@"backbtn"] forState:UIControlStateNormal];
+//    [backButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     backButton.titleLabel.font = [UIFont fontWithName:@"HelveticaNeueLTStd-MdCn" size:14.0];
     //backButton.backgroundColor = [UIColor colorWithWhite:0.3 alpha:0.5];
     [backButton addTarget:self action:@selector(cancelButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
@@ -93,8 +94,9 @@
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:backButton];
     
     
-    UIButton *btnDone = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 70, 44)];
-    [btnDone setTitle:@"Post" forState:UIControlStateNormal];
+    UIButton *btnDone = [UIButton buttonWithType:UIButtonTypeCustom];
+    btnDone.frame = CGRectMake(0, 0, 49, 49);
+    [btnDone setBackgroundImage:[UIImage imageNamed:@"okaybtn"] forState:UIControlStateNormal];
     //[btnDone setBackgroundImage:[UIImage imageNamed:@"navbtnDone"] forState:UIControlStateNormal];
     [btnDone addTarget:self action:@selector(doneButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:btnDone];

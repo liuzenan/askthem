@@ -19,37 +19,29 @@
     [PFFacebookUtils initializeFacebook];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
-
-    // Prints available fonts
-    for ( NSString *familyName in [UIFont familyNames] ) {
-        
-        if ([familyName rangeOfString:@"oxim"].location == NSNotFound){
-            //NSLog(@"not found");
-        }else{
-            NSLog(@"Family %@", familyName); NSLog(@"Names = %@", [UIFont fontNamesForFamilyName:familyName]);
-        }
-    }
     
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackOpaque];
     [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"headerbg"] forBarMetrics:UIBarMetricsDefault];
     [[UINavigationBar appearance] setTintColor:[UIColor blackColor]];
-    [[UINavigationBar appearance] setTitleTextAttributes:
-     [NSDictionary dictionaryWithObjectsAndKeys:
-      [UIColor colorWithRed:255.0/255.0 green:255.0/255.0 blue:255.0/255.0 alpha:1.0],
-      UITextAttributeTextColor,
-      [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.8],
-      UITextAttributeTextShadowColor,
-      [NSValue valueWithUIOffset:UIOffsetMake(0, 1)],
-      UITextAttributeTextShadowOffset,
-      //[UIFont fontWithName:@"ProximaNovaBold" size:16.0],
-      [UIFont systemFontOfSize:16.0],
-      UITextAttributeFont,
-      nil]];
+//    [[UINavigationBar appearance] setTitleTextAttributes:
+//     [NSDictionary dictionaryWithObjectsAndKeys:
+//      [UIColor colorWithRed:255.0/255.0 green:255.0/255.0 blue:255.0/255.0 alpha:1.0],
+//      UITextAttributeTextColor,
+//      [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.8],
+//      UITextAttributeTextShadowColor,
+//      [NSValue valueWithUIOffset:UIOffsetMake(0, 1)],
+//      UITextAttributeTextShadowOffset,
+//      [UIFont fontWithName:@"ProximaNova-Semibold" size:16.0f],
+//      UITextAttributeFont,
+//      nil]];
+    [[UINavigationBar appearance] setTitleTextAttributes: @{
+                                UITextAttributeTextColor: [UIColor whiteColor],
+                          UITextAttributeTextShadowColor: [UIColor clearColor],
+                         UITextAttributeTextShadowOffset: [NSValue valueWithUIOffset:UIOffsetMake(0.0f, 1.0f)],
+                                     UITextAttributeFont: [UIFont fontWithName:@"ProximaNova-Semibold" size:18.0f]
+     }];
     [[UINavigationBar appearance] setTitleVerticalPositionAdjustment:5 forBarMetrics:UIBarMetricsDefault];
-    
 
-    
-    
     return YES;
 }
 							

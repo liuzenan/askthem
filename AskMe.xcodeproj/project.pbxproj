@@ -67,6 +67,9 @@
 		E4ACC99B17054E120001F996 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4ACC99A17054E120001F996 /* FacebookSDK.framework */; };
 		E4ACC99D17054F680001F996 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E4ACC99C17054F680001F996 /* libsqlite3.dylib */; };
 		E4ACC9A0170557510001F996 /* ATPopularViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4ACC99F170557510001F996 /* ATPopularViewController.m */; };
+		E4E6166B17061429002A82EF /* ProximaNova-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E4E61668170613EE002A82EF /* ProximaNova-Semibold.ttf */; };
+		E4E6166C1706142C002A82EF /* ProximaNova-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E4E61669170613EE002A82EF /* ProximaNova-Regular.ttf */; };
+		E4E6166D1706142F002A82EF /* ProximaNova-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E4E6166A170613EE002A82EF /* ProximaNova-Bold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,17 +96,6 @@
 		E46C0577170574DF009C0554 /* ATChooseGenderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATChooseGenderViewController.h; sourceTree = "<group>"; };
 		E46C0578170574DF009C0554 /* ATChooseGenderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATChooseGenderViewController.m; sourceTree = "<group>"; };
 		E46C057A170584FB009C0554 /* ATConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATConstants.m; sourceTree = "<group>"; };
-		E46C057C170586AB009C0554 /* ProximaNova-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Black.otf"; sourceTree = "<group>"; };
-		E46C057D170586AB009C0554 /* ProximaNova-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Bold.otf"; sourceTree = "<group>"; };
-		E46C057E170586AB009C0554 /* ProximaNova-BoldIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-BoldIt.otf"; sourceTree = "<group>"; };
-		E46C057F170586AB009C0554 /* ProximaNova-Extrabold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Extrabold.otf"; sourceTree = "<group>"; };
-		E46C0580170586AB009C0554 /* ProximaNova-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Light.otf"; sourceTree = "<group>"; };
-		E46C0581170586AB009C0554 /* ProximaNova-LightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-LightItalic.otf"; sourceTree = "<group>"; };
-		E46C0582170586AB009C0554 /* ProximaNova-RegItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-RegItalic.otf"; sourceTree = "<group>"; };
-		E46C0583170586AB009C0554 /* ProximaNova-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Regular.otf"; sourceTree = "<group>"; };
-		E46C0584170586AB009C0554 /* ProximaNova-RegularItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-RegularItalic.otf"; sourceTree = "<group>"; };
-		E46C0585170586AB009C0554 /* ProximaNova-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Semibold.otf"; sourceTree = "<group>"; };
-		E46C0586170586AB009C0554 /* ProximaNova-SemiboldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-SemiboldItalic.otf"; sourceTree = "<group>"; };
 		E46C058717058B4F009C0554 /* PopularCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopularCell.h; sourceTree = "<group>"; };
 		E46C058817058B4F009C0554 /* PopularCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopularCell.m; sourceTree = "<group>"; };
 		E46C05A41705941D009C0554 /* backbtn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backbtn@2x.png"; sourceTree = "<group>"; };
@@ -163,6 +155,9 @@
 		E4ACC99C17054F680001F996 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		E4ACC99E170557510001F996 /* ATPopularViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATPopularViewController.h; sourceTree = "<group>"; };
 		E4ACC99F170557510001F996 /* ATPopularViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATPopularViewController.m; sourceTree = "<group>"; };
+		E4E61668170613EE002A82EF /* ProximaNova-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Semibold.ttf"; sourceTree = "<group>"; };
+		E4E61669170613EE002A82EF /* ProximaNova-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Regular.ttf"; sourceTree = "<group>"; };
+		E4E6166A170613EE002A82EF /* ProximaNova-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Bold.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,6 +238,9 @@
 		618F581617057A9A005527B3 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				E4E61668170613EE002A82EF /* ProximaNova-Semibold.ttf */,
+				E4E61669170613EE002A82EF /* ProximaNova-Regular.ttf */,
+				E4E6166A170613EE002A82EF /* ProximaNova-Bold.ttf */,
 				E46C05A41705941D009C0554 /* backbtn@2x.png */,
 				E46C05A51705941D009C0554 /* commenticon@2x.png */,
 				E46C05A61705941D009C0554 /* confirm@2x.png */,
@@ -257,17 +255,6 @@
 				E46C05AF1705941D009C0554 /* okaybtn@2x.png */,
 				E46C05B01705941D009C0554 /* postbtn@2x.png */,
 				E46C05B11705941E009C0554 /* postmade@2x.png */,
-				E46C057C170586AB009C0554 /* ProximaNova-Black.otf */,
-				E46C057D170586AB009C0554 /* ProximaNova-Bold.otf */,
-				E46C057E170586AB009C0554 /* ProximaNova-BoldIt.otf */,
-				E46C057F170586AB009C0554 /* ProximaNova-Extrabold.otf */,
-				E46C0580170586AB009C0554 /* ProximaNova-Light.otf */,
-				E46C0581170586AB009C0554 /* ProximaNova-LightItalic.otf */,
-				E46C0582170586AB009C0554 /* ProximaNova-RegItalic.otf */,
-				E46C0583170586AB009C0554 /* ProximaNova-Regular.otf */,
-				E46C0584170586AB009C0554 /* ProximaNova-RegularItalic.otf */,
-				E46C0585170586AB009C0554 /* ProximaNova-Semibold.otf */,
-				E46C0586170586AB009C0554 /* ProximaNova-SemiboldItalic.otf */,
 				E46C05C01705944A009C0554 /* simple_left@2x.png */,
 				618F581717057A9A005527B3 /* icon_share@2x.png */,
 			);
@@ -478,6 +465,9 @@
 				E46C05BF1705941E009C0554 /* postmade@2x.png in Resources */,
 				E46C05C11705944A009C0554 /* simple_left@2x.png in Resources */,
 				E46C05C51705979F009C0554 /* PopularCell.xib in Resources */,
+				E4E6166B17061429002A82EF /* ProximaNova-Semibold.ttf in Resources */,
+				E4E6166C1706142C002A82EF /* ProximaNova-Regular.ttf in Resources */,
+				E4E6166D1706142F002A82EF /* ProximaNova-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

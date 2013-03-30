@@ -142,14 +142,14 @@
     [self initDefaultBackButton];
     
     shareButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    shareButton.frame = CGRectMake(0, 0, 44, 44);
+    shareButton.frame = CGRectMake(0, 0, 49, 49);
     [shareButton setBackgroundImage:[UIImage imageNamed:@"icon_share"] forState:UIControlStateNormal];
     shareButton.backgroundColor = [UIColor clearColor];
     [shareButton addTarget:self action:@selector(shareTapped:) forControlEvents:UIControlEventTouchUpInside];
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:shareButton];
     
-    self.navigationItem.title = @"Question";
+    self.navigationItem.title = @"GIVE ADVICE";
 }
 
 - (void)viewDidAppear:(BOOL)animated{
